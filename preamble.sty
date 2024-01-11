@@ -22,12 +22,22 @@
 \newcommand{\sizetf}[1]{{\fontsize{24}{29}\normalfont #1}}
 \newcommand{\sizete}[1]{{\fontsize{28}{34}\normalfont #1}}
 
+%% Left justified ("ragged right") text
+\usepackage{ragged2e}
+\setlength{\RaggedRightParindent}{\parindent}
+
+%% Left justifying captions as required by the ACIT thesis handbook
+\usepackage{caption}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+
+%% Line spacing = 1.5
+\usepackage{setspace}
+
 
 %% Language
 \usepackage{babel}      % Automatically translates e.g. Chapter to the language set by \documentclass[options]{memoir}
 \usepackage{fvextra}
 \usepackage{csquotes}   % for quotation marks according to the language set, e.g.: \enquote{This is an \enquote{inner quote} inside an outer quote}
-
 
 
 
@@ -50,6 +60,7 @@
 \DeclareMathOperator{\T}{T} % transpose
 \DeclareMathOperator{\round}{round} % round (\round 3.2 = 3)
 
+
 \usepackage{hyperref}
 %\urlstyle{sf}      % sans serif
 \hypersetup{
@@ -61,6 +72,7 @@
     %pdfkeywords={},
 }
 
+
 %% Images
 \usepackage{graphicx}   % to manage images
 \graphicspath{{./figures/}} % path to figures/images
@@ -70,7 +82,8 @@
 \usepackage{tikz}
 \usepackage{standalone} % for importing large TikZ figures in separate files (tikzfile.tex) using \includestandalone{tikzfile}
 
-%% Table wrapping, author recommends using https://www.tablesgenerator.com/
+
+%% Table wrapping, https://www.tablesgenerator.com/ may be used
 \usepackage{tabularx}
 \usepackage{multicol}
 \usepackage{multirow}
@@ -90,22 +103,19 @@
 \maxtocdepth{subsection} % up to which level should be included in Table of Contents (TOC), default section
 \setsecnumdepth{subsection} % to number until level subsections (e.g. 3.1.4 Subsection title)
 
+
 %% Bibliography
 \usepackage{mathscinet}
 \usepackage[backend=biber, style=apa]{biblatex}
 \DeclareNameAlias{author}{family-given}
 \addbibresource{sources.bib}
 
-%% Left justified ("ragged right") text
-\usepackage{ragged2e}
-\setlength{\RaggedRightParindent}{\parindent}
+%% List of Symbols and Abbreviations
+\usepackage{nomencl}    % Nomenclature package
+\makenomenclature
+\usepackage{etoolbox}   % To create groups, for e.g. Abbreviations and Symbols
 
-%% Left justifying captions as required by the ACIT thesis handbook
-\usepackage{caption}
-\captionsetup{justification=raggedright, singlelinecheck=false}
 
-%% Line spacing = 1.5
-\usepackage{setspace}
 
 %% ACIT Handbook requirements:
 % Left margin: 2.5 cm

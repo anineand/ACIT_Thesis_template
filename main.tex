@@ -45,7 +45,24 @@
 \newpage
 \listoftables
 
-%% Optional: List of Abbreviations and/or List of Symbols, see https://www.overleaf.com/learn/latex/Nomenclatures
+%% Optional: List of Abbreviations and/or Symbols, see https://www.overleaf.com/learn/latex/Nomenclatures
+% Create groups ----------------------------
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{A}{Abbreviations}{%
+  \ifstrequal{#1}{S}{Symbols}{}}%
+]}
+% List abbreviations [A] and symbols [S] ---
+\nomenclature[A]{CI}{Cast iron}
+\nomenclature[A]{DI}{Ductile iron}
+\nomenclature[A]{PP}{Polypropylene}
+\nomenclature[S]{\(\R\)}{Real numbers}
+\nomenclature[S]{\(\C\)}{Complex numbers}
+\nomenclature[S]{\(V\)}{Constant volume}
+\nomenclature[S]{\(\rho\)}{Friction index}
+
+\printnomenclature
+% ------------------------------------------
 
 \mainmatter     % Arabic numerals for numbered chapters
 \include{Chapters/01intro}
