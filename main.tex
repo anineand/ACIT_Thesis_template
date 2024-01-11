@@ -1,0 +1,78 @@
+% Save as: Family_Given_OsloMetUsername_ACIT5900.pdf
+
+\documentclass[a4paper, 12pt, openany, british]{memoir}    % A4, 12pt, openany to not get blank pages to make chapters begin on odd pages, british/american/english
+\usepackage{import}
+\usepackage{preamble}
+
+%% Updates the titlepage:
+\title{Title of master thesis}    % thesis title
+\author{Author Name}    % Author name
+\date{May 2024} % Year (update as needed)
+\specialisation{Robotics and Control}   % the specialisation, e.g. Applied Artificial Intelligence
+\course{ACIT5900}      % Change to ACIT5930 if long thesis
+
+
+% \includeonly{} may be removed
+\includeonly{
+    Chapters/00abstract,
+    Chapters/00preface,
+    Chapters/01intro,
+    Chapters/02litreview,
+    Chapters/03chapter,
+    Chapters/04chapter,
+    Chapters/90results,
+    Chapters/91discussion,
+    Chapters/92conclusion,
+    Chapters/appA,
+    %Chapters/appB, % notice that if commented out, it will not be included even though it is included below!
+}
+
+
+\begin{document}
+
+\frontmatter    % Roman numerals
+\input{titlepage}
+
+\RaggedRight
+
+
+\include{Chapters/00abstract}
+\include{Chapters/00preface}
+
+\tableofcontents
+\newpage    
+\listoffigures
+\newpage
+\listoftables
+
+%% Optional: List of Abbreviations and/or List of Symbols, see https://www.overleaf.com/learn/latex/Nomenclatures
+
+\mainmatter     % Arabic numerals for numbered chapters
+\include{Chapters/01intro}
+\include{Chapters/02litreview}
+
+%\part{The First Part}
+\include{Chapters/03chapter}
+\include{Chapters/04chapter}
+
+%\part{The Second Part}
+%\include{Chapters/05chapter}
+
+%\part{The Final Part}
+\include{Chapters/90results}
+\include{Chapters/91discussion}
+\include{Chapters/92conclusion}
+
+%\backmatter     % Arabic numerals
+\printbibliography[title=References]
+
+% Appendices, remove or comment out if none
+\appendix       % Chapters are renamed "Appendix A/B/..."
+\appendixpage  % like \part*{Appendices} but appears in TOC
+\include{Chapters/appA}
+\include{Chapters/appB}
+
+
+\end{document}
+
+

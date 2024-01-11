@@ -1,0 +1,121 @@
+\ProvidesPackage{preamble}
+
+\usepackage[a4paper, margin=25mm]{geometry}
+\usepackage{fontspec}
+
+%% Specify required main font with bold, italic and bold-italic:
+\setmainfont[
+    BoldFont={./fonts/calibri-bold.ttf},
+    ItalicFont={./fonts/calibri-italic.ttf},
+    BoldItalicFont={./fonts/calibri-bold-italic.ttf}
+]{calibri-regular.ttf}  % calibri
+\linespread{1.25}   % Line spacing equal to 1.5 in Word
+
+%% Title page
+\usepackage{titling}    % To use \theauthor, \thetitle and \thedate from the main fields
+\DeclareRobustCommand\specialisation[1]{\gdef\thespec{#1}}  % Custom field/variable for specialisation, accessed by \thespec
+\DeclareRobustCommand\course[1]{\gdef\thecourse{#1}}  % Specify course code (ACIT5900/ACIT5930)
+\newcommand{\sizeft}[1]{{\fontsize{14}{18}\normalfont #1}}
+\newcommand{\sizest}[1]{{\fontsize{16}{19}\normalfont #1}}
+\newcommand{\sizetw}[1]{{\fontsize{20}{24}\normalfont #1}}
+\newcommand{\sizett}[1]{{\fontsize{22}{22}\normalfont #1}}
+\newcommand{\sizetf}[1]{{\fontsize{24}{29}\normalfont #1}}
+\newcommand{\sizete}[1]{{\fontsize{28}{34}\normalfont #1}}
+
+
+%% Language
+\usepackage{babel}      % Automatically translates e.g. Chapter to the language set by \documentclass[options]{memoir}
+\usepackage{fvextra}
+\usepackage{csquotes}   % for quotation marks according to the language set, e.g.: \enquote{This is an \enquote{inner quote} inside an outer quote}
+
+
+
+
+%% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}    % Extra symbols
+\usepackage{mathtools}  % Fonts and environments for math
+\usepackage{mathrsfs}   % Scriptfont with \mathscr{}
+\usepackage{eucal}      % Math calligraphy \mathcal{}
+\usepackage{bbm}        % for mathbb numerals
+\usepackage{dsfont}     % Double stroke font with \mathds{}
+\usepackage{cancel}     % Cancel terms with \cancel, \bcancel or \xcancel
+\usepackage{stmaryrd}   % Brackets
+
+%% Shortcuts for e.g. mathematical spaces
+\newcommand{\R}{\mathbb{R}} % real numbers
+\newcommand{\C}{\mathbb{C}} % complex numbers
+
+%% Custom math operators (making them non-cursive)
+\DeclareMathOperator{\T}{T} % transpose
+\DeclareMathOperator{\round}{round} % round (\round 3.2 = 3)
+
+\usepackage{hyperref}
+%\urlstyle{sf}      % sans serif
+\hypersetup{
+    unicode, 
+    %colorlinks, 
+    breaklinks, urlcolor=cyan, linkcolor=blue,
+    pdfauthor={Anine Andresen},
+    %pdftitle={Andresen\_Anine\_s372076\_ACIT5900}
+    %pdfkeywords={},
+}
+
+%% Images
+\usepackage{graphicx}   % to manage images
+\graphicspath{{./figures/}} % path to figures/images
+\usepackage[section]{placeins}  % keep floats and figures within sections
+\usepackage{wrapfig}
+%% TikZ for making figures
+\usepackage{tikz}
+\usepackage{standalone} % for importing large TikZ figures in separate files (tikzfile.tex) using \includestandalone{tikzfile}
+
+%% Table wrapping, author recommends using https://www.tablesgenerator.com/
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{multirow}
+
+
+%% Import code
+\usepackage{minted}
+
+
+%% Cross references
+\usepackage{varioref}
+\usepackage[nameinlink, capitalize, noabbrev]{cleveref}
+\usepackage{appendix}
+
+
+%% Settings for documentclass levels
+\maxtocdepth{subsection} % up to which level should be included in Table of Contents (TOC), default section
+\setsecnumdepth{subsection} % to number until level subsections (e.g. 3.1.4 Subsection title)
+
+%% Bibliography
+\usepackage{mathscinet}
+\usepackage[backend=biber, style=apa]{biblatex}
+\DeclareNameAlias{author}{family-given}
+\addbibresource{sources.bib}
+
+%% Left justified ("ragged right") text
+\usepackage{ragged2e}
+\setlength{\RaggedRightParindent}{\parindent}
+
+%% Left justifying captions as required by the ACIT thesis handbook
+\usepackage{caption}
+\captionsetup{justification=raggedright, singlelinecheck=false}
+
+%% Line spacing = 1.5
+\usepackage{setspace}
+
+%% ACIT Handbook requirements:
+% Left margin: 2.5 cm
+% Justification: Left justified text, headings, figure and table text, figures and tables
+% Font style: Arial or Calibri without (serifs and hairlines)
+% Font size: 12 pt
+% Line space: 1.5
+% Page numbers: Bottom, centred
+% Start every new main chapter on a new page
+% Interactive Table of contents, etc.
+% Figure & table numbering: #ch.#fig/tab, e.g. Figure 9.3 for the 3rd fig in chapter 9, and Table A.2
+
+
