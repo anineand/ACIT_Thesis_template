@@ -10,6 +10,13 @@ Personal opinions and points of view should not be included in this chapter.
 Correct and unambiguous references must accompany all information derived from academic
 literature and other relevant sources.} (\cite{handbook})
 
-\vspace{\baselineskip} \noindent
-Referencing can be done using \texttt{\textbackslash cite\{citation-key\}},
-\cite{winkler2018bdt}. Page (p.), pages (pp.) or chapter (Ch.) may be specified \texttt{\textbackslash cite[here]\{citation-key\}}, e.g. \cite[pp. 2]{winkler2018bdt}. The command \texttt{\textbackslash citetitle\{citation-key\}} can be used to cite the title, e.g. \citetitle{winkler2018bdt}.
+\section{APA referencing}
+The referencing style is set to APA as required, see \href{https://apastyle.apa.org/style-grammar-guidelines/references}{https://apastyle.apa.org/style-grammar-guidelines/references}. Note that APA has two citation styles:
+\begin{itemize}
+    \item \textbf{Parenthetical citation}, if the reference is not worked into the sentence, but in parenthesis at the end, use \texttt{\textbackslash citep\{key\}}: The results of this study were inconclusive \citep{winkler2018bdt}. 
+    \item \textbf{Narrative or textual citation}, if the reference is worked into the text, use \texttt{\textbackslash citet\{key\}}: \citet{winkler2018bdt} determined that the results of the study were inconclusive.
+    \item If the standard \texttt{\textbackslash cite\{key\}} is used, it results in a parenthetical citation without parenthesis: \cite{winkler2018bdt}.
+\end{itemize}
+To specify page (p.), pages (pp.) or chapter (Ch.), use \texttt{\textbackslash citep[here]\{citation-key\}} or \texttt{\textbackslash citet[here]\{citation-key\}}, e.g. \citet[pp. 2]{winkler2018bdt}.
+
+The command \texttt{\textbackslash citetitle\{citation-key\}} can be used to cite the title, e.g. \citetitle{winkler2018bdt}.

@@ -1,3 +1,6 @@
+% !TEX TS-program = xelatex
+% (on Overleaf, click Menu and choose Compiler: XeLaTeX
+
 \ProvidesPackage{preamble}
 
 \usepackage[a4paper, margin=25mm]{geometry}
@@ -39,7 +42,9 @@
 \usepackage{fvextra}
 \usepackage{csquotes}   % for quotation marks according to the language set, e.g.: \enquote{This is an \enquote{inner quote} inside an outer quote}
 
-
+% Optional formatting styles
+\chapterstyle{tandh} % See https://ctan.org/pkg/memoirchapterstyles?lang=en for different chapter header styles
+\usepackage[font=bf]{caption}   % Table and figure captions in bold for visibility
 
 %% Mathematics
 \usepackage{amsmath}
@@ -67,8 +72,8 @@
     unicode, 
     %colorlinks, 
     breaklinks, urlcolor=cyan, linkcolor=blue,
-    pdfauthor={Anine Andresen},
-    %pdftitle={Andresen\_Anine\_s372076\_ACIT5900}
+    pdfauthor={Author Name},
+    %pdftitle={Family\GivenName\_s3X\_ACIT5900}
     %pdfkeywords={},
 }
 
@@ -106,15 +111,25 @@
 
 %% Bibliography
 \usepackage{mathscinet}
-\usepackage[backend=biber, style=apa]{biblatex}
-\DeclareNameAlias{author}{family-given}
+\usepackage[backend=biber, natbib=true, style=apa]{biblatex} 
+%\usepackage[backend=biber, style=apa]{biblatex}
+%\DeclareNameAlias{author}{family-given}
 \addbibresource{sources.bib}
 
 %% List of Symbols and Abbreviations
 \usepackage{nomencl}    % Nomenclature package
 \makenomenclature
-\usepackage{etoolbox}   % To create groups, for e.g. Abbreviations and Symbols
+\renewcommand{\nomname}{List of Abbreviations}  % edit for custom title, remember to update the title for the phantom section too
+\usepackage{etoolbox}   % To create groups, like methods [M], materials [A] and so on
 
+
+%% Update page style with header and page number bottom centred
+\makepagestyle{thesis}
+\makeevenhead{thesis}{\leftmark}{}{}
+\makeoddhead{thesis}{}{}{\rightmark}
+\makeevenfoot{thesis}{}{\thepage}{}
+\makeoddfoot{thesis}{}{\thepage}{}
+\pagestyle{thesis}
 
 
 %% ACIT Handbook requirements:

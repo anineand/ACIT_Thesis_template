@@ -1,27 +1,8 @@
-% The BibTex of a reference can be copied from e.g. Google Scholar, it is good practice to include DOI as well when available. 
+% The BibTex of a reference can be copied from e.g. Google Scholar, it is good practice to include DOI or URI as well when available. 
 
 % Remember commas between every field! Comments inside citation fields does not work, but outside like this does.
 
-% Beaware that references will be doubled if you accidentally make the same using different citation keys! Therefore, I highly recommend you use a convention such as Google's {main author's family name}{year}{first word/whatever you want to make it easier for yourself}. Or at least doublecheck the references for double entries before submitting. 
-
-@article{winkler2018bdt,
-  title={Pipe failure modelling for water distribution networks using boosted decision trees},
-  author={Winkler, Daniel and Haltmeier, Markus and Kleidorfer, Manfred and Rauch, Wolfgang and Tscheikner-Gratl, Franz},
-  journal={Structure and Infrastructure Engineering},
-  volume={14},
-  number={10},
-  pages={pp. 1402--1411},
-  year={2018},
-  publisher={Taylor \& Francis},
-  doi={10.1080/15732479.2018.1443145},
-}
-
-@book{citation-key,
-    author = {},
-    title = {},
-    publisher = {},
-    year = {},
-}
+% Beaware of double entries, that is, references will be doubled if you accidentally create two or more BibLatex entries for the same reference with different citation keys! I highly recommend you use a convention such as Google's {main author's family name}{year}{first word or better, keyword}. Or at least doublecheck the references for double entries before submitting. 
 
 @misc{handbook,
     author = {{Oslo Metropolitan University, Department of Computer Science}},
@@ -29,4 +10,79 @@
     title = {{ACIT Master's Thesis Handbook}},
     howpublished = {in ACIT Master class, Canvas},
     note = {Accessed: 2023-05-18},
+}
+
+% EXAMPLES
+% Articles
+@article{winkler2018bdt,
+    title={Pipe failure modelling for water distribution networks using boosted decision trees},
+    author={Winkler, Daniel and Haltmeier, Markus and Kleidorfer, Manfred and Rauch, Wolfgang and Tscheikner-Gratl, Franz},
+    journal={Structure and Infrastructure Engineering},
+    volume={14},
+    number={10},
+    pages={pp. 1402--1411},
+    year={2018},
+    publisher={Taylor \& Francis},
+    doi={10.1080/15732479.2018.1443145},
+}
+
+% Journals
+@inproceedings{ren2019deepRSA,
+    title={Deep recurrent survival analysis},
+    author={Ren, Kan and Qin, Jiarui and Zheng, Lei and Yang, Zhengyu and Zhang, Weinan and Qiu, Lin and Yu, Yong},
+    booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume={33},
+    number={01},
+    pages={4798--4805},
+    year={2019},
+    doi={10.48550/arXiv.1809.02403}
+}
+
+% Books
+@book{hastie2009elementsStat,
+    author = {Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome},
+    title = {{The elements of statistical learning: Data mining, inference and prediction}},
+    publisher = {Springer},
+    edition = {Second},
+    year = {2009},
+    doi = {10.1007/978-0-387-84858-7},
+    series = {Springer Series in Statistics},
+    isbn = {978-0-387-84857-0},
+}
+
+% Bachelor thesis
+@mastersthesis{khalsa2022waterinequality,
+    title={The impact of water infrastructure inequality on marginalized communities},
+    author={Khalsa, Indra},
+    type={Bachelor's thesis},
+    school={University of Tennessee at Chattanooga},
+    year={2022},
+    url={https://scholar.utc.edu/honors-theses/379}
+}
+
+% Master's thesis
+@mastersthesis{rekstad2023survcancer,
+    title = {A Comparison of Methods for Modelling Survival Time for Cancer Patients},
+    author = {Rekstad, Mikko Johan Vatterdal},
+    school = {Norwegian University of Life Sciences (NMBU)},
+    year = {2023},
+    note = {URI: \url{https://hdl.handle.net/11250/3076766}}
+}
+
+% PhD thesis
+@phdthesis{kvamme2019thesis,
+    author = {Kvamme, Håvard},
+    title = {Time-to-Event Prediction with Neural Networks},
+    school = {{University of Oslo}},
+    year = {2019},
+    url = {http://urn.nb.no/URN:NBN:no-79162}
+}
+
+% Websites
+@misc{lightgbm-tuning,
+    author = {{LightGBM contributors}},
+    year = {},
+    title = {{LightGBM documentation: Parameters tuning}},
+    url = {https://lightgbm.readthedocs.io/en/stable/Parameters-Tuning.html},
+    note = {Accessed: 2024-05-07},
 }
